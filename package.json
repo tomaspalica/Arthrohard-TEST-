@@ -1,0 +1,24 @@
+{
+  "name": "arthrohard-test-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaspalica/Arthrohard-TEST-.git"
+  },
+  "keywords": [],
+  "author": "TOMASZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomaspalica/Arthrohard-TEST-/issues"
+  },
+  "homepage": "https://github.com/tomaspalica/Arthrohard-TEST-#readme",
+  "devDependencies": {
+    "vite": "^5.3.3"
+  }
+}
