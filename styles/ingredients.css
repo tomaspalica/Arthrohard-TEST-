@@ -4,11 +4,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 0 10%;
 }
 .ingredients__headline {
   font-family: "Futura PT book";
-  font-size: 48px;
-  line-height: 61.54px;
+  font-size: 8vw;
   background: linear-gradient(
     90.01deg,
     #111111 -8.85%,
@@ -21,15 +21,13 @@
 }
 .ingredients__lesser-headline {
   font-family: "Futura PT book";
-  font-size: 31px;
-
-  line-height: 39.74px;
+  font-size: 6vw;
   text-align: center;
 }
 .ingredients__list-wrapper {
   width: 100%;
   position: relative;
-  padding-bottom: 450px;
+  padding-bottom: 75%;
 }
 
 .ingredients__list {
@@ -47,8 +45,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  gap: 30px;
+  gap: 10px;
+}
+.ingredients__element:hover > .ingredients__element-name::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgba(17, 17, 17, 1);
+  position: absolute;
+  bottom: -10%;
+  right: 0%;
 }
 .ingredients__img-wrapper {
   display: flex;
@@ -65,22 +71,24 @@
 }
 .ingredients__img-button {
   width: 30%;
-  height: 5%;
-  bottom: 5%;
+  min-height: 5%;
+  height: auto;
+  bottom: 2%;
   position: absolute;
-
+  padding: 0.35em 1.2em;
   background: rgba(173, 72, 68, 1);
   border: none;
   font-family: "Futura PT bold";
   color: rgba(246, 246, 246, 1);
   text-align: center;
   line-height: 25.64px;
-  font-size: 10px;
+  font-size: 2vw;
+  padding: 0px;
 }
 
 .ingredients__element-circle {
-  width: 70px;
-  height: 70px;
+  width: 10vw;
+  height: 10vw;
   border-radius: 50%;
   background: rgba(217, 217, 217, 1);
   visibility: visible;
@@ -88,20 +96,19 @@
 }
 .ingredients__element-name {
   font-family: "Futura PT book";
-  font-size: 31px;
-  line-height: 39.74px;
+  font-size: 6vw;
   margin: 0px;
+  position: relative;
 }
+
 .ingredients__element-info {
   font-family: "Futura PT book";
-  font-size: 20px;
-  line-height: 25.64px;
+  font-size: 3.5vw;
   margin: 0px;
 }
 .ingredients__element-measurement {
   font-family: "Futura PT book";
-  font-size: 20px;
-  line-height: 25.64px;
+  font-size: 3.5vw;
   margin: 0px;
 }
 
@@ -109,8 +116,43 @@
   .ingredients__list {
     grid-template-columns: auto auto;
   }
+  .ingredients__headline {
+    font-size: 48px;
+    line-height: 61.54px;
+  }
+  .ingredients__lesser-headline {
+    font-size: 31px;
+    line-height: 39.74px;
+  }
+  .ingredients__element-name {
+    font-size: 31px;
+    line-height: 39.74px;
+    margin-bottom: 10px;
+  }
+  .ingredients__element-info {
+    font-size: 20px;
+    line-height: 25.64px;
+  }
+
+  .ingredients__element-measurement {
+    font-size: 20px;
+    line-height: 25.64px;
+  }
+  .ingredients__element-circle {
+    width: 70px;
+    height: 70px;
+  }
+  .ingredients__element {
+    gap: 30px;
+  }
+  .ingredients__element:hover > .ingredients__element-name::after {
+    bottom: -20px;
+  }
 }
 @media (min-width: 1200px) {
+  .ingredients {
+    padding: 0;
+  }
   .ingredients__list-wrapper {
     padding-bottom: 0px;
   }
@@ -120,6 +162,7 @@
   .ingredients__element {
     width: 417px;
   }
+
   .ingredients__img-wrapper {
     width: 35%;
     right: 32.5%;
@@ -135,5 +178,40 @@
     width: 171px;
     height: 46px;
     font-size: 20px;
+  }
+  .ingredients__headline {
+    font-size: 48px;
+    line-height: 61.54px;
+  }
+  .ingredients__lesser-headline {
+    font-size: 31px;
+    line-height: 39.74px;
+  }
+  .ingredients__element {
+    gap: 30px;
+  }
+  .ingredients__element:hover > .ingredients__element-name::after {
+    bottom: -20px;
+  }
+  .ingredients__element-name {
+    font-size: 31px;
+    line-height: 39.74px;
+    margin-bottom: 10px;
+  }
+  .ingredients__element-info {
+    font-size: 20px;
+    line-height: 25.64px;
+  }
+  .ingredients__element-measurement {
+    font-size: 20px;
+    line-height: 25.64px;
+  }
+  .ingredients__element-circle {
+    width: 70px;
+    height: 70px;
+  }
+  .ingredients__dog-img {
+    width: 945px;
+    height: auto;
   }
 }

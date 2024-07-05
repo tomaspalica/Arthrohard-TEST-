@@ -18,13 +18,20 @@ body {
   color: #ad4844;
 }
 .header__logo {
+  text-align: center;
   font-size: 4.5vw;
+  margin: 5px 0px;
+}
+.navigation {
+  flex: 1;
+  display: flex;
 }
 .navigation__list {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-evenly;
   padding-left: 0;
-  gap: 20px;
+  margin: 5px 0px;
 }
 .navigation__list-element {
   list-style: none;
@@ -37,20 +44,38 @@ body {
   font-family: "Futura PT heavy";
 }
 
-@media (min-width: 650px) and (max-width: 1024px) {
+@media (min-width: 650px) and (max-width: 1200px) {
   .header__logo {
+    flex: 1;
     font-size: 29px;
+    margin: 15px 0px;
   }
   .navigation__list-element {
     font-size: 16px;
+  }
+  .navigation__list {
+    width: 351px;
+    margin: 15px 0px;
+  }
+  .navigation {
+    flex: 1.5;
   }
 }
 
 @media (min-width: 1200px) {
   .header__logo {
+    flex: 1;
     font-size: 29px;
+    margin: 15px 0px;
   }
   .navigation__list-element {
     font-size: 16px;
+  }
+  .navigation__list {
+    width: 351px;
+    margin: 15px 0px;
+  }
+  .navigation {
+    flex: 1.5;
   }
 }
