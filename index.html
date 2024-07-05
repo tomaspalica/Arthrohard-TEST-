@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/main-section.css" />
+    <link rel="stylesheet" href="/styles/ingredients.css" />
     <title>Document</title>
   </head>
   <body>
     <header class="header">
-      <h2 class="logo">ARTHRO<span class="logo-end">HARD</span></h2>
+      <h2 class="logo header__logo">
+        ARTHRO<span class="logo-end">HARD</span>
+      </h2>
       <nav class="navigation">
         <ul class="navigation__list">
           <li class="navigation__list-element">CO NAS WYRÓŻNIA</li>
@@ -49,6 +52,7 @@
                 poważnymi problemami stawowymi.
               </p>
               <img
+                class="about__info-img"
                 src="/pictures/shutterstock_1770486131 1flower.png"
                 alt="purple flower"
               />
@@ -68,6 +72,7 @@
                 </li>
               </ul>
               <img
+                class="about__info-img"
                 src="/pictures/Frame 126feeding.png"
                 alt="two pictures of feeding dogs "
               />
@@ -84,6 +89,7 @@
                 swojego zwierzęcia.
               </p>
               <img
+                class="about__info-img"
                 src="/pictures/shutterstock_2171764885 1needle.png"
                 alt="picture of a syringe on a blue background"
               />
@@ -91,20 +97,87 @@
           </ul>
         </div>
       </section>
-      <section>
-        <h3></h3>
-        <h4>Co dają poszczególne składniki:</h4>
-        <ul>
-          <li>
-            <span>kółko</span>
-            <h4></h4>
-            <p>mg</p>
-            <p>opis</p>
-          </li>
-        </ul>
-        <img src="" alt="" />
-        <button>Kup teraz</button>
-        <ul></ul>
+      <section class="ingredients">
+        <h3 class="ingredients__headline">Skład w 5 ml</h3>
+        <h4 class="ingredients__lesser-headline">
+          Co dają poszczególne składniki:
+        </h4>
+        <div class="ingredients__list-wrapper">
+          <div class="ingredients__img-wrapper">
+            <img src="pictures/Group 16bottle.png" alt="" />
+            <button class="ingredients__img-button">Kup teraz</button>
+          </div>
+          <ul class="ingredients__list">
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">Siarczan glukozaminy</h4>
+              <p class="ingredients__element-measurement">650 mg</p>
+              <p class="ingredients__element-info">
+                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
+                glukozaminy przyczynia się do zwiększenia produkcji
+                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
+                hialuronowego), które pomagają w odbudowie chrząstki, co jest
+                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
+                stawów.
+              </p>
+            </li>
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">Czarci pazur</h4>
+              <p class="ingredients__element-measurement">250 mg</p>
+              <p class="ingredients__element-info">
+                Czarci pazur jest rośliną, która ma właściwości przeciwzapalne i
+                przeciwbólowe. Może to pomóc zwierzętom, które doświadczają bólu
+                i stanu zapalnego związanego z problemami ze stawami.
+              </p>
+            </li>
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">Siarczan chondroityny</h4>
+              <p class="ingredients__element-measurement">300 mg</p>
+              <p class="ingredients__element-info">
+                Chondroityna, podobnie jak glukozamina, jest składnikiem
+                chrząstki. Chondroityna pomaga zwalczać enzymy, które niszczą
+                chrząstkę, a także pomaga chrząstce zatrzymać wodę, co jest
+                ważne dla jej sprężystości i absorpcji wstrząsów.
+              </p>
+            </li>
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">Witamina C</h4>
+              <p class="ingredients__element-measurement">50 mg</p>
+              <p class="ingredients__element-info">
+                Witamina C jest potężnym przeciwutleniaczem, który może pomóc w
+                ochronie stawów poprzez neutralizację wolnych rodników, które
+                mogą uszkadzać chrząstkę. Ponadto, witamina C odgrywa ważną rolę
+                w produkcji kolagenu, kluczowego składnika chrząstki.
+              </p>
+            </li>
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">Kwas hialuronowy</h4>
+              <p class="ingredients__element-measurement">50 mg</p>
+              <p class="ingredients__element-info">
+                Kwas hialuronowy jest kluczowym składnikiem płynu stawowego,
+                który działa jak smar i amortyzator dla stawów. Suplementacja
+                kwasem hialuronowym może pomóc w utrzymaniu prawidłowej
+                objętości i konsystencji płynu stawowego.
+              </p>
+            </li>
+            <li class="ingredients__element">
+              <span class="ingredients__element-circle"></span>
+              <h4 class="ingredients__element-name">MSM</h4>
+              <p class="ingredients__element-measurement">250 mg</p>
+              <p class="ingredients__element-info">
+                Metylosulfonylometan, czyli MSM, to naturalny związek siarki,
+                który pomaga w utrzymaniu zdrowych stawów poprzez zmniejszenie
+                stanu zapalnego i bólu. MSM może również pomagać w produkcji
+                kolagenu, co przyczynia się do zdrowia chrząstki stawowej.
+              </p>
+            </li>
+          </ul>
+        </div>
+
         <img src="" alt="" />
       </section>
     </main>

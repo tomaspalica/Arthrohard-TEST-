@@ -9,11 +9,16 @@ body {
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 .logo {
+  font-family: "Futura PT medium";
 }
 .logo-end {
   color: #ad4844;
+}
+.header__logo {
+  font-size: 4.5vw;
 }
 .navigation__list {
   display: flex;
@@ -23,6 +28,29 @@ body {
 }
 .navigation__list-element {
   list-style: none;
-  font-size: 16px;
+  font-size: 2.5vw;
   line-height: 20.51px;
+  font-family: "Futura PT Book";
+  font-weight: 450;
+}
+.navigation__list-element:hover {
+  font-family: "Futura PT heavy";
+}
+
+@media (min-width: 650px) and (max-width: 1024px) {
+  .header__logo {
+    font-size: 29px;
+  }
+  .navigation__list-element {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__logo {
+    font-size: 29px;
+  }
+  .navigation__list-element {
+    font-size: 16px;
+  }
 }
