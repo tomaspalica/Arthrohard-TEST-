@@ -1,0 +1,11 @@
+import axios from "axios";
+
+const apiLink = "https://brandstestowy.smallhost.pl/api/random";
+
+export async function getProducts(page, pageSize) {
+  console.log(pageSize);
+  const respone = await axios.get(
+    `${apiLink}?pageNumber=${page}&pageSize=${pageSize}`
+  );
+  return respone.data;
+}

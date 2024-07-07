@@ -1,7 +1,9 @@
 body {
   margin: 0px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .header {
   display: flex;
   justify-content: space-around;
@@ -10,6 +12,12 @@ body {
   -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 100%;
+  background-color: white;
+  z-index: 3;
+}
+.sticky {
+  position: fixed;
+  top: 0%;
 }
 .logo {
   font-family: "Futura PT medium";
@@ -20,7 +28,20 @@ body {
 .header__logo {
   text-align: center;
   font-size: 4.5vw;
-  margin: 5px 0px;
+  margin: 5px 0px 5px 5%;
+}
+.header__logo a {
+  text-decoration: none;
+  color: black;
+}
+.header__logo a :visited {
+  text-decoration: none;
+}
+.header__logo :hover {
+  text-decoration: none;
+}
+.header__logo a :active {
+  text-decoration: none;
 }
 .navigation {
   flex: 1;
@@ -39,9 +60,34 @@ body {
   line-height: 20.51px;
   font-family: "Futura PT Book";
   font-weight: 450;
+  position: relative;
 }
+.navigation__list-element a {
+  text-decoration: none;
+  color: black;
+}
+.navigation__list-element a :visited {
+  text-decoration: none;
+}
+.navigation__list-element a :hover {
+  text-decoration: none;
+  font-family: "Futura PT heavy";
+}
+.navigation__list-element a :active {
+  text-decoration: none;
+}
+
 .navigation__list-element:hover {
   font-family: "Futura PT heavy";
+}
+.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(17, 17, 17, 1);
+  bottom: 15%;
+  right: 0%;
 }
 
 @media (min-width: 650px) and (max-width: 1200px) {

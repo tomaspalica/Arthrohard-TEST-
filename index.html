@@ -6,18 +6,26 @@
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/main-section.css" />
     <link rel="stylesheet" href="/styles/ingredients.css" />
+    <link rel="stylesheet" href="/styles/product.css" />
+    <link rel="stylesheet" href="/styles/modal.css" />
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header sticky">
       <h2 class="logo header__logo">
-        ARTHRO<span class="logo-end">HARD</span>
+        <a href="/">ARTHRO<span class="logo-end">HARD</span></a>
       </h2>
       <nav class="navigation">
         <ul class="navigation__list">
-          <li class="navigation__list-element">CO NAS WYRÓŻNIA</li>
-          <li class="navigation__list-element">SKŁAD</li>
-          <li class="navigation__list-element">PRODUKTY</li>
+          <li class="navigation__list-element">
+            <a href="#about__list">CO NAS WYRÓŻNIA</a>
+          </li>
+          <li class="navigation__list-element">
+            <a href="#ingredients">SKŁAD</a>
+          </li>
+          <li class="navigation__list-element">
+            <a href="#products">PRODUKTY</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -26,7 +34,9 @@
         <div class="about__main-wrapper">
           <img src="/pictures/Group 18two-bottles.png" alt="" />
           <div class="about__description-wrapper">
-            <h1 class="logo about__logo">ARTHRO<span class="logo-end">HARD</span></h1>
+            <h1 class="logo about__logo">
+              ARTHRO<span class="logo-end">HARD</span>
+            </h1>
             <span class="about__main-description"
               >Lab-V Arthrohard Preparat na wsparcie stawów dla psa i kota</span
             >
@@ -37,7 +47,18 @@
             <button class="about__main-button">Kup teraz</button>
           </div>
         </div>
-        <div class="about__info-wrapper">
+        <img
+          class="about__small-right"
+          src="/pictures/VectorsmallRight.png"
+          alt=""
+        />
+        <img
+          class="about__big-right"
+          src="/pictures/VectorbigRight.png"
+          alt=""
+        />
+        <img class="about__big-left" src="/pictures/VectorbitLeft.png" alt="" />
+        <div class="about__info-wrapper" id="about__list">
           <h3 class="about__info-headline">Co wyróżnia nasz preparat</h3>
           <ul class="about__info-list">
             <li class="about__info-element">
@@ -56,6 +77,16 @@
                 class="about__info-img"
                 src="/pictures/shutterstock_1770486131 1flower.png"
                 alt="purple flower"
+              />
+              <img
+                class="about__flower-left-img"
+                src="/pictures/VectorflowerLeft.png"
+                alt=""
+              />
+              <img
+                class="about__flower-right-img"
+                src="/pictures/VectorflowerRight.png"
+                alt=""
               />
             </li>
             <li class="about__info-element feeding">
@@ -79,6 +110,16 @@
                 src="/pictures/Frame 126feeding.png"
                 alt="two pictures of feeding dogs "
               />
+              <img
+                class="about__feeding-left-img"
+                src="/pictures/VectorfeedingLeft.png"
+                alt=""
+              />
+              <img
+                class="about__feeding-right-img"
+                src="/pictures/VectorfeedingRight.png"
+                alt=""
+              />
             </li>
             <li class="about__info-element">
               <h4 class="about__element-headline">
@@ -97,11 +138,21 @@
                 src="/pictures/shutterstock_2171764885 1needle.png"
                 alt="picture of a syringe on a blue background"
               />
+              <img
+                class="about__syringe-left-img"
+                src="/pictures/VectorsyringeLeft.png"
+                alt=""
+              />
+              <img
+                class="about__syringe-right-img"
+                src="/pictures/VectorsyringeRight.png"
+                alt=""
+              />
             </li>
           </ul>
         </div>
       </section>
-      <section class="ingredients">
+      <section class="ingredients" id="ingredients">
         <h3 class="ingredients__headline">Skład w 5 ml</h3>
         <h4 class="ingredients__lesser-headline">
           Co dają poszczególne składniki:
@@ -182,8 +233,42 @@
           </ul>
         </div>
 
-        <img class="ingredients__dog-img" src="/pictures/Group 20dog.png" alt="" />
+        <img
+          class="ingredients__dog-img"
+          src="/pictures/Group 20dog.png"
+          alt=""
+        />
+      </section>
+      <section class="product" id="products">
+        <div class="product__count-wrapper">
+          <p>liczba produktów na stronie</p>
+          <div class="product__select">
+            <select class="product__standard-select" name="" id="">
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+            <img
+              class="product__select-img"
+              src="pictures/Vector 1arrow.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <ul class="product__list"></ul>
       </section>
     </main>
+    <div class="modal__wrapper hidden">
+      <div class="modal">
+        <div class="modal__up">
+          <h4 class="modal__id">ID 10</h4>
+          <button class="modal__close-button">X</button>
+        </div>
+        <div class="modal__info-wrapper">
+          <span class="modal__name">Nazwa: objekt 2</span>
+          <span class="modal__value">wartość:200</span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/script.js"></script>
   </body>
 </html>
