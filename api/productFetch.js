@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "/axio";
 
 const apiLink = "https://brandstestowy.smallhost.pl/api/random";
 

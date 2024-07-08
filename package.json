@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "vite"
@@ -18,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/tomaspalica/Arthrohard-TEST-/issues"
   },
-  "homepage": "https://github.com/tomaspalica/Arthrohard-TEST-#readme",
+  "homepage": "https://github.com/tomaspalica/Arthrohard-TEST-/",
   "devDependencies": {
     "vite": "^5.3.3"
   },
