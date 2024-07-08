@@ -5,7 +5,7 @@
   justify-content: center;
   position: relative;
   padding: 0 10%;
-  padding-bottom: 35%;
+  padding-bottom: 30%;
 }
 .ingredients__headline {
   font-family: "Futura PT book";
@@ -47,9 +47,9 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
-  gap: 60px;
+  gap: 20px;
 }
 .ingredients__element {
   list-style: none;
@@ -183,24 +183,23 @@
   }
   .ingredients__list-wrapper {
     padding-bottom: 0px;
+    margin-top: 80px;
   }
   .ingredients__list {
+    gap: 60px;
     grid-template-columns: auto auto;
+    justify-content: space-between;
   }
   .ingredients__element {
     width: 417px;
   }
 
   .ingredients__img-wrapper {
-    width: 35%;
-    right: 32.5%;
-    bottom: 10%;
+    width: 40%;
+    right: 29.5%;
+    bottom: 20%;
   }
   .ingredients__img-wrapper img {
-    max-width: 621px;
-    max-height: 1102px;
-    min-width: 489px;
-    min-height: 868px;
   }
   .ingredients__img-button {
     width: 171px;
@@ -243,5 +242,15 @@
     height: auto;
     position: absolute;
     bottom: -5.4%;
+  }
+}
+@media (min-width: 1500px) {
+  .ingredients__list {
+    justify-content: space-around;
+  }
+  .ingredients__img-wrapper {
+    width: 38%;
+    right: 31%;
+    bottom: 5%;
   }
 }

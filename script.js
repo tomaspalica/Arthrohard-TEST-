@@ -2,38 +2,15 @@ import { getProducts } from "./api/productFetch";
 
 const productList = document.querySelector(".product__list");
 const productSelect = document.querySelector(".product__standard-select");
-const infoWrapper = document.querySelector(".about__info-wrapper");
-const navigationList = document.querySelector(".navigation__list");
 const aboutList = document.getElementById("about__list");
 const ingredients = document.getElementById("ingredients");
 const products = document.getElementById("products");
 const navLinks = document.querySelectorAll(".navigation__list-element a");
-const mainWrapper = document.querySelector(".about__description-wrapper");
 const modalWrapper = document.querySelector(".modal__wrapper");
 const modalCloseButton = document.querySelector(".modal__close-button");
 let pageNumber = 1;
 let pageSize = 20;
-
-const createList = async (pageSize = 20, page = 1) => {
-  const products = await getProducts(page, pageSize);
-  products.data.forEach((element) => {
-    const item = document.createElement("li");
-    item.classList.add("product__list-element");
-    item.innerHTML = `ID: ${element.id}`;
-    item.id = element.id;
-    item.setAttribute("name", element.name);
-    item.value = element.value;
-    productList.appendChild(item);
-  });
-};
-productSelect.addEventListener("change", (e) => {
-  productList.innerHTML = "";
-  pageNumber = 1;
-  pageSize = e.target.value;
-
-  createList(pageSize, pageNumber);
-});
-
+let loading = false;
 let throttleTimer;
 const throttle = (callback, time) => {
   if (throttleTimer) return;
@@ -43,14 +20,56 @@ const throttle = (callback, time) => {
     throttleTimer = false;
   }, time);
 };
+
+// function that creates and adds to dom products to the list
+const createList = async (pageSize = 20, page = 1) => {
+  if (loading) return;
+  loading = true;
+  const products = await getProducts(page, pageSize);
+
+  products.data.forEach((element) => {
+    const item = document.createElement("li");
+    item.classList.add("product__list-element");
+    item.innerHTML = `ID: ${element.id}`;
+    item.id = element.id;
+    item.setAttribute("name", element.name);
+    item.value = element.value;
+    productList.appendChild(item);
+  });
+  loading = false;
+  observer.disconnect();
+};
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !loading) {
+        createList();
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
+  }
+);
+// changes products amount that is requested from api
+productSelect.addEventListener("change", (e) => {
+  productList.innerHTML = "";
+  pageNumber = 1;
+  pageSize = e.target.value;
+
+  createList(pageSize, pageNumber);
+});
+
+// infinit scroll
 window.addEventListener("scroll", () => {
   throttle(() => {
     if (
       window.scrollY + window.innerHeight >=
       document.documentElement.scrollHeight
     ) {
-      console.log(pageSize);
-      console.log(pageNumber);
       pageNumber += 1;
       createList(pageSize, pageNumber);
     }
@@ -58,7 +77,9 @@ window.addEventListener("scroll", () => {
 });
 
 const sections = [aboutList, ingredients, products];
-console.log(sections);
+
+// highlights headers navLinks when user sees the coresponding section
+
 function checkSection() {
   let currentIndex = -1;
 
@@ -77,7 +98,7 @@ function checkSection() {
   });
 }
 window.addEventListener("scroll", checkSection);
-
+// closes modal
 function closeModal() {
   modalWrapper.classList.add("hidden");
 }
@@ -87,6 +108,7 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+// opens modal
 function openModal(e) {
   if (e.target.tagName !== "LI") {
     return;
@@ -101,4 +123,5 @@ function openModal(e) {
   modalWrapper.classList.remove("hidden");
 }
 productList.addEventListener("click", openModal);
-createList();
+// lazy loading
+observer.observe(productList);
