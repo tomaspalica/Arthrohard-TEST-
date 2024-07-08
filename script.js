@@ -1,4 +1,4 @@
-import { getProducts } from "productFetch";
+import { getProducts } from "./api/productFetch.js";
 
 const productList = document.querySelector(".product__list");
 const productSelect = document.querySelector(".product__standard-select");
