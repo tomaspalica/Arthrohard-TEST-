@@ -1,5 +1,4 @@
-import { getProducts } from "./api/productFetch.js";
-
+import { getProducts } from "./api.js";
 const productList = document.querySelector(".product__list");
 const productSelect = document.querySelector(".product__standard-select");
 const aboutList = document.getElementById("about__list");
@@ -26,7 +25,7 @@ const createList = async (pageSize = 20, page = 1) => {
   if (loading) return;
   loading = true;
   const products = await getProducts(page, pageSize);
-
+  console.log(products);
   products.data.forEach((element) => {
     const item = document.createElement("li");
     item.classList.add("product__list-element");
